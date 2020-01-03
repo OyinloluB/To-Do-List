@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+#container {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 10%;
+}
+
+.todo-name {
+    margin-bottom: 8%;
+    font-size: 16px;
+}
+
+#todo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+#todo-title h2 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#todo-list div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(90, 88, 88);
+    font-weight: 700
+}
+
+.task,
+.delete {
+    flex: 1;
+    margin-top: 10px;
+}
+
+.delete {
+    border: 1px solid rgb(233, 230, 55);
+    padding: 10px;
+    width: 8%;
+    text-align: center;
+}
+
+.delete:hover {
+    background-color: rgb(233, 230, 55);
+    color: white;
+}
+
+#todo-list {
+    margin-top: 5%;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newtodo, .addtodo {
+    margin: 1%;
+    margin-top: 5%;
+}
+
+.newtodo {
+    width: 40%;
+    /* margin-top: 8%; */
+    height: 35px;
+    border: 1px solid rgb(233, 230, 55);
+    padding: 7px;
+}
+
+.addtodo {
+    padding: 10px;
+    border: 1px solid rgb(233, 230, 55);
+    background-color: rgb(233, 230, 55);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+@media screen and (max-width:700px){
+    #todo-list div{
+        flex-direction:column;
+        margin-top: 5%;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 10px;
+        background-color: white;
+    }
+    .delete {
+        width: 15%;
+        padding: 10px;
+        margin-top: 3%;
+    }
+}
+
+@media screen and (max-width:510px){
+    .delete {
+        width: 20%;
+        padding: 10px;
+        margin-top: 3%;
+    }
+    form {
+        flex-direction: column
+
+    }
+    .newtodo {
+        width: 50%;
+        margin-top: 5%;
+    }
+}
+
+@media screen and (max-width:420px){
+    .delete {
+        width: 50%;
+        margin-top: 10%;
+        padding: 5px;
+    }
+    
+   #todo-list div {
+        margin-left: 3px;
+        margin-right: 2px;
+    }
+}
+@media screen and (max-width: 320px){
+    .task {
+        text-align: center;
+        font-size: 15px;
+    }
+    .delete {
+        margin-top: 10%;
+        padding: 3px;
+    }
+    .newtodo {
+        width: 75%;
+        height: 20%;
+    }
+    .todo-name {
+        font-size: 16px;
+        margin-bottom: 8%;
+    }
+}
