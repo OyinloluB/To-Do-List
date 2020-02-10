@@ -1,67 +1,42 @@
-// var button = document.getElementsByClassName('delete')
+const textAreaActive = document.querySelector(".post");
+const submitButton = document.querySelector("#button");
+const item = document.querySelector(".items");
+const deletePost = document.querySelectorAll("span");
+const defaultText = document.querySelector(".defaultText");
 
+textAreaActive.addEventListener("click", function() {
+  textAreaActive.classList.add("active");
 
+  let postData = (textAreaActive.value = "");
+});
 
-//delete Item
-// Array.from(button).forEach(function(butt){
-//     butt.addEventListener('click', function(e){
-        
-//          if(e.target.className == 'delete'){
-//             const delItem = e.target.parentElement;
-//             delItem.parentNode.removeChild(delItem);
-//          }
-//     });
-// })
+deletePost.forEach(post => {
+  post.addEventListener("click", function() {
+    console.log(post);
+    const delPost = post.parentElement;
+    delPost.parentElement.removeChild(delPost);
+  });
+});
 
-const delLists = document.querySelectorAll('#todo-list div');
+submitButton.addEventListener("click", function(e) {
+  e.preventDefault();
 
-Array.from(document.querySelectorAll('.delete')).forEach(function(item){
-        item.addEventListener('click', function(e){
-            const del = item.parentElement;
+  const printValue = document.createElement("li");
+  const span = document.createElement("span");
+  const div = document.createElement("div");
 
-            del.parentNode.removeChild(del);
+  let postData = textAreaActive.value;
 
-    })
-})
+  printValue.innerHTML = postData;
+  span.innerHTML = "Delete post";
+  div.appendChild(printValue);
+  div.appendChild(span);
+  item.appendChild(div);
 
+  postData = textAreaActive.value = "";
 
-
-//create new to do
-
-var forms = document.getElementsByClassName('todo')
-
-Array.from(forms).forEach(function(form){
-    form.addEventListener('submit', function(e){
-        e.preventDefault();
-        
-        const value = form.querySelector('input[type="text"]').value;
-        console.log(value)
-
-const div = document.createElement('div');
-const todoName = document.createElement('p');
-const deleBtn = document.createElement('span');
-
-
-
-    deleBtn.addEventListener('click', function(e){
-        const newDel = deleBtn.parentElement;
-
-        newDel.parentNode.removeChild(newDel);
-        
-        console.log(newDel)
-    })
-        
-const container = document.getElementById('todo-list');
-
-deleBtn.textContent = 'delete';
-todoName.textContent = value;
-
-todoName.classList.add('task');
-deleBtn.classList.add('delete');
-
-div.appendChild(todoName);
-div.appendChild(deleBtn);
-container.appendChild(div);
-    })
-})
-
+  span.addEventListener("click", function() {
+    const newDel = span.parentElement;
+    newDel.parentElement.removeChild(newDel);
+  });
+});

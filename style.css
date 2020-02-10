@@ -1,154 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: #f7f7f7;
+  background-color: rgb(13, 131, 139);
 }
 
-#container {
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 10%;
-}
-
-.todo-name {
-    margin-bottom: 8%;
-    font-size: 16px;
-}
-
-#todo-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 8%;
-}
-
-#todo-title h2 {
-    text-transform: uppercase;
-    text-align: center;
-}
-
-#todo-list div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: rgb(90, 88, 88);
-    font-weight: 700
-}
-
-.task,
-.delete {
-    flex: 1;
-    margin-top: 10px;
-}
-
-.delete {
-    border: 1px solid rgb(233, 230, 55);
-    padding: 10px;
-    width: 8%;
-    text-align: center;
-}
-
-.delete:hover {
-    background-color: rgb(233, 230, 55);
-    color: white;
-}
-
-#todo-list {
-    margin-top: 5%;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.newtodo, .addtodo {
-    margin: 1%;
-    margin-top: 5%;
+.post {
+  min-width: 500px;
+  padding: 10px 10px 10px 10px;
+  border: 2px solid #fff;
 }
 
-.newtodo {
-    width: 40%;
-    /* margin-top: 8%; */
-    height: 35px;
-    border: 1px solid rgb(233, 230, 55);
-    padding: 7px;
+#button {
+  background-color: rgb(34, 204, 216);
+  border: 1px solid rgb(34, 204, 216);
+  margin-top: 5px;
+  padding: 10px;
+  width: 100px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.addtodo {
-    padding: 10px;
-    border: 1px solid rgb(233, 230, 55);
-    background-color: rgb(233, 230, 55);
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
+.active {
+  border: 3px solid rgb(216, 213, 34);
+  box-shadow: 0 0 5px 0 black;
 }
 
-
-@media screen and (max-width:700px){
-    #todo-list div{
-        flex-direction:column;
-        margin-top: 5%;
-        margin-left: 15%;
-        margin-right: 15%;
-        padding: 10px;
-        background-color: white;
-    }
-    .delete {
-        width: 15%;
-        padding: 10px;
-        margin-top: 3%;
-    }
+.defaultText {
+  margin-top: 10px;
+  letter-spacing: 5px;
+  display: none;
 }
 
-@media screen and (max-width:510px){
-    .delete {
-        width: 20%;
-        padding: 10px;
-        margin-top: 3%;
-    }
-    form {
-        flex-direction: column
-
-    }
-    .newtodo {
-        width: 50%;
-        margin-top: 5%;
-    }
+.items {
+  margin-top: 10px;
+  color: #fff;
 }
 
-@media screen and (max-width:420px){
-    .delete {
-        width: 50%;
-        margin-top: 10%;
-        padding: 5px;
-    }
-    
-   #todo-list div {
-        margin-left: 3px;
-        margin-right: 2px;
-    }
+.items li {
+  list-style-type: none;
+  padding: 15px;
+  border: 1px solid rgb(216, 213, 34);
+  margin-top: 10px;
+  width: 500px;
 }
-@media screen and (max-width: 320px){
-    .task {
-        text-align: center;
-        font-size: 15px;
-    }
-    .delete {
-        margin-top: 10%;
-        padding: 3px;
-    }
-    .newtodo {
-        width: 75%;
-        height: 20%;
-    }
-    .todo-name {
-        font-size: 16px;
-        margin-bottom: 8%;
-    }
+
+span {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgb(216, 213, 34);
+  font-size: 14px;
+  border: 1px solid rgb(216, 213, 34);
+  cursor: pointer;
 }

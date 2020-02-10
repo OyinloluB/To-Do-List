@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>To-do List</title>
-</head>
-<body>
-    
-    <div id="container">
-        <div id="todo-title">
-            <h2 class="todo-name">Your To-do List</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <title>Firebase</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="add-post">
+        <textarea
+          name="post"
+          type="reset"
+          class="post"
+          cols="30"
+          rows="15"
+        ></textarea>
+        <input type="submit" id="button" value="Post" />
+      </form>
+
+      <div class="items">
+        <p class="defaultText">You have no posts.</p>
+        <div>
+          <li>
+            You can delete this guy if he is bugging you.
+          </li>
+          <span>Delete post</span>
         </div>
-        <section id="todo-list">
-          <div>
-              <p class="task">Create to-do!</p>
-              <span class="delete">delete</span>
-          </div> 
-
-        </section>
+        <div>
+          <li>
+            This guy too!
+          </li>
+          <span>Delete post</span>
+        </div>
+      </div>
     </div>
-    <form class="todo" name="todos" data-netlify="true">
-        <input type="text" placeholder="New To-Do" class="newtodo" name="todoname" netlify>
-        <input type="submit" value="Add To-Do" class="addtodo" name="todonameadded" netlify>
-    </form>
-    
 
-<script src="app.js"></script>    
-</body>
+    <!-- Firebase goes in here-->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB6h_iS74xLtMI8AN5xQIb_KzDsNkoeOQQ",
+        authDomain: "first-project-e3525.firebaseapp.com",
+        databaseURL: "https://first-project-e3525.firebaseio.com",
+        projectId: "first-project-e3525",
+        storageBucket: "first-project-e3525.appspot.com",
+        messagingSenderId: "220017964200",
+        appId: "1:220017964200:web:c3bbfdf529d67dbd5cfe9d",
+        measurementId: "G-9QTDNM9547"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      //   db.settings({ timestampsInSnapshots: true });
+      firebase.analytics();
+    </script>
+
+    <script src="app.js"></script>
+  </body>
 </html>
